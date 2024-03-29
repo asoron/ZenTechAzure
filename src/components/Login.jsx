@@ -1,24 +1,22 @@
 import React, { useState } from "react";
-import { auth } from "../firebaseConfig"; // Adjust the path according to your project structure
+import { auth } from "../firebaseConfig"; // Proje yapısına göre yol ayarlayın
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigate, Link } from "react-router-dom";
 import "./style/Login.css";
 
 function Login() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
-	const navigate = useNavigate();
 
 	const handleLogin = async (e) => {
 		e.preventDefault();
-		setError(""); // Reset error message
+		setError(""); // Hata mesajını sıfırlayın
 
 		try {
 			await signInWithEmailAndPassword(auth, email, password);
-			navigate("/"); // Redirect to ChatUI or homepage after successful login
+			// Başarılı girişten sonra ChatUI veya anasayfaya yönlendirin
 		} catch (error) {
-			setError("Failed to log in. Please check your email and password."); // Update error message based on real scenarios
+			setError("Giriş yapılamadı. Lütfen e-posta ve şifrenizi kontrol edin."); // Gerçek senaryolara göre hata mesajını güncelleyin
 			console.error(error.message);
 		}
 	};
@@ -48,11 +46,11 @@ function Login() {
 						required
 					/>
 				</div>
-				<button
-					type="submit"
-					className="login-button">
+				<div
+					className="login-button"
+					onClick={handleLogin}>
 					Login
-				</button>
+				</div>
 			</form>
 		</div>
 	);

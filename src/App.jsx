@@ -8,7 +8,6 @@ import {
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebaseConfig";
 import Login from "./components/Login";
-import Signup from "./components/Signup";
 import SideMenu from "./components/SideMenu";
 import ChatUI from "./chatPage";
 
@@ -16,7 +15,7 @@ function App() {
 	const [currentUser, setCurrentUser] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [selectedAI, setSelectedAI] = useState("Lit");
-	const [showSideMenu, setShowSideMenu] = useState(false); // The new state: visibility of the side menu.
+	const [showSideMenu, setShowSideMenu] = useState(false);
 
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -47,19 +46,6 @@ function App() {
 						element={
 							!currentUser ? (
 								<Login />
-							) : (
-								<Navigate
-									replace
-									to="/"
-								/>
-							)
-						}
-					/>
-					<Route
-						path="/signup"
-						element={
-							!currentUser ? (
-								<Signup />
 							) : (
 								<Navigate
 									replace

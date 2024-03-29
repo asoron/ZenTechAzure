@@ -8,6 +8,10 @@
 	box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Shadow for dark mode */
 }
 
+.form-group {
+	margin-bottom: 20px; /* Adjust spacing between form groups */
+}
+
 .form-group label {
 	display: block;
 	margin-bottom: 5px;
@@ -18,14 +22,21 @@
 	width: 100%;
 	padding: 12px;
 	border-radius: 4px;
-	margin-bottom: 20px;
-	border: none; /* Removing border */
+	border: none;
 	background-color: #525252; /* Darker background for input */
 	color: #f7f7f7; /* Light text color */
+	transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover and focus */
+}
+
+.form-group input:focus {
+	outline: none;
+	background-color: #666; /* Darker background on focus */
 }
 
 .login-button {
-	width: 100%;
+	width: calc(
+		100% - 15px
+	); /* Adjust width to match input fields (subtract padding and borders) */
 	background-color: #007bff;
 	color: white;
 	padding: 10px 20px;
@@ -33,6 +44,7 @@
 	border-radius: 4px;
 	cursor: pointer;
 	font-weight: bold;
+	transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
 .login-button:hover {
