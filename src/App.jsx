@@ -6,21 +6,22 @@ import {
 	Navigate,
 } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "./firebaseConfig.js";
-import Login from "./components/Login.jsx";
-import SideMenu from "./components/SideMenu.jsx";
-import ChatUI from "./chatPage.jsx";
+import { auth } from "./firebaseConfig";
+import Login from "./components/Login";
+import SideMenu from "./components/SideMenu";
+import ChatUI from "./components/ChatUI"; // Doğru dosya yolu sağlandığından emin olun
 
 function App() {
 	const [currentUser, setCurrentUser] = useState(null);
 	const [selectedAI, setSelectedAI] = useState("Lit");
 	const [showSideMenu, setShowSideMenu] = useState(false);
+	const [isLoading, setLoading] = useState(true); // isLoading state'i eklendi
 
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (user) => {
 			setCurrentUser(user);
 			setShowSideMenu(!!user);
-			setLoading(false);
+			setLoading(false); // Yükleme durumunu güncelle
 		});
 		return unsubscribe;
 	}, []);
@@ -32,13 +33,15 @@ function App() {
 	return (
 		<Router>
 			<div className="appContainer">
-				{currentUser && showSideMenu && (
+				{isLoading ? (
+					<p>Loading...</p> // Yükleme durumunu göster
+				) : currentUser && showSideMenu ? (
 					<SideMenu
 						onAIChange={handleAIChange}
 						selectedAI={selectedAI}
 						userId={currentUser?.uid}
 					/>
-				)}
+				) : null}
 				<Routes>
 					<Route
 						path="/login"

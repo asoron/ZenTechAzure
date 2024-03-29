@@ -1,9 +1,8 @@
-// ChatUI.jsx
 import React, { useState, useEffect, useRef } from "react";
 import { OpenAIClient, AzureKeyCredential } from "@azure/openai";
 import MessageDisplay from "./MessageDisplay.jsx";
 import TextInput from "./TextInput.jsx";
-import "./style/ChatUI.css"; // Ensure this import is correct
+import "./style/ChatUI.css";
 
 const azureApiKey = "bcc85e30e3044e0b9fe9e1dbc4cc2c7c"; // API anahtarınızı buraya girin
 const endpoint = "https://zenchatzengpt.openai.azure.com/";
@@ -15,14 +14,18 @@ const ChatUI = ({ selectedAI }) => {
 	const chatBoxRef = useRef(null);
 
 	useEffect(() => {
-		const loadModelData = async () => {
+		async function loadModelData() {
+			setAIModelData(null); // Önceki model verilerini temizle
 			try {
 				const modelData = await import(`./assets/${selectedAI}.js`);
 				setAIModelData(modelData.default);
 			} catch (error) {
 				console.error("Failed to load AI model data:", error);
+				alert(
+					"AI model data could not be loaded. Please check the model name and try again."
+				);
 			}
-		};
+		}
 
 		if (selectedAI) {
 			loadModelData();
@@ -34,6 +37,11 @@ const ChatUI = ({ selectedAI }) => {
 	}, [selectedAI]);
 
 	const handleSendMessage = async (text) => {
+		if (!AIModelData) {
+			alert("AI model is not set. Please select an AI model first.");
+			return;
+		}
+
 		setIsLoading(true);
 		const newMessages = [...messages, { role: "user", content: text }];
 		setMessages(newMessages);
@@ -71,7 +79,7 @@ const ChatUI = ({ selectedAI }) => {
 
 				setMessages((prevMessages) => [
 					...prevMessages,
-					{ role: "ai", content: aiText }, // Ensure this matches the expected structure
+					{ role: "ai", content: aiText },
 				]);
 			}
 		} catch (error) {
