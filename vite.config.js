@@ -5,9 +5,9 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
 	plugins: [react()],
-	build: {
-		rollupOptions: {
-			external: ["@azure/openai"], // Add @azure/openai as an external module
+	resolve: {
+		alias: {
+			"@azure/openai": "@opai/azure", // Replace with the correct alias for @azure/openai
 		},
 	},
 });
