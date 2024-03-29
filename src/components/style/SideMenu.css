@@ -1,0 +1,63 @@
+/* SideMenu.css */
+
+.loadingContainer {
+	height: 500; /* Yükseklik örneği, ihtiyaca göre ayarlayın */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+}
+
+.sideMenu {
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 200px;
+	background-color: #1c1c1e;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: start;
+	gap: 12px;
+	padding-top: 60px;
+	box-shadow: 4px 0 20px rgba(0, 0, 0, 0.5);
+	height: auto; /* Set height to auto for dynamic sizing */
+}
+
+.menuButton {
+	width: 90%;
+	height: 30px;
+	border-radius: 10px;
+	border: none;
+	cursor: pointer;
+	background-color: #2c2c2e;
+	color: #ffffff;
+	transition: background-color 0.3s, transform 0.2s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 15px;
+	letter-spacing: 0.5px;
+}
+.selected {
+	background-color: #4a4a4a; /* Darker but noticeable background */
+	color: #d1d1d1; /* Soft light for text, ensuring readability */
+	font-weight: bold; /* Keeps the text bold for emphasis */
+	transform: scale(1.05); /* Maintains the slight increase in size */
+	box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Softer shadow for depth */
+}
+
+/* Ensure other button states like :hover and :active are also styled appropriately */
+.menuButton:hover,
+.selected:hover {
+	background-color: #5a5a5a; /* Slightly lighter for hover on both normal and selected buttons */
+	color: #ffffff; /* Brighter white text on hover for better visibility */
+	box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2); /* Enhanced shadow for hover effect */
+}
+
+.menuButton:active,
+.selected:active {
+	transform: translateY(1px); /* Maintains the push effect on click */
+	box-shadow: none; /* Remove shadow when pressed for a flat effect */
+}

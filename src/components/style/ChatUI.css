@@ -1,0 +1,14 @@
+.chatUI {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+.chatContent {
+	flex-grow: 1;
+	width: 100%;
+	max-width: 800px; /* Set your preferred max width */
+	overflow-y: auto;
+}

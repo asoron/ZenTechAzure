@@ -1,0 +1,11 @@
+// roles.json
+[
+	{
+		"name": "Napnite",
+		"description": "Napnite, uyumakta güçlük çeken bireyleri hızlı bir şekilde uyutmaya yarayan bir uyku cihazıdır."
+	},
+	{
+		"name": "Lit",
+		"description": "Lit, okuma alışkanlığını geliştirmek için tasarlanmış interaktif bir e-kitap okuyucusudur."
+	}
+]

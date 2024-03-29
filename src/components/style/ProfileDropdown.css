@@ -1,0 +1,74 @@
+.appContainer {
+	position: relative;
+}
+
+.profileDropdown {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+}
+
+.profileDropdown button {
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	background-color: #343a40;
+	border: none;
+	color: #f8f9fa;
+	outline: none;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.profileDropdown button:hover {
+	background-color: #495057;
+	transform: scale(1.1);
+}
+
+.dropdownMenu {
+	position: absolute;
+	right: 0;
+	top: 50px; /* Adjusts to position below the profile button */
+	background-color: #343a40;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	z-index: 100;
+	width: 200px; /* Adjusts the width of the dropdown */
+}
+
+.dropdownMenu button {
+	color: #f8f9fa;
+	background-color: transparent; /* Ensures background is consistent */
+	border: none;
+	outline: none;
+	cursor: pointer;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	border-radius: 5px; /* Adjusts for rounded corners */
+	width: 100%; /* Ensures button width matches the dropdown */
+	padding: 8px 12px; /* Padding for better visual appearance */
+	text-align: left; /* Aligns text to the left */
+}
+
+.dropdownMenu button:not(.logoutButton) {
+	margin-bottom: 5px; /* Space between buttons except for the last one */
+}
+
+.dropdownMenu button:hover {
+	background-color: #495057; /* Background color on hover */
+}
+
+.logoutButton {
+	margin-top: auto; /* Pushes the button to the bottom of the dropdown */
+	background-color: #dc3545; /* Gives the logout button a distinct color */
+	color: #ffffff;
+}
+
+.logoutButton:hover {
+	background-color: #c82333; /* Darker shade on hover for logout button */
+}

@@ -1,0 +1,61 @@
+/* TextInput.css */
+.textInputForm {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto; /* Formu merkeze al */
+	padding-bottom: 20px;
+}
+
+.inputContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	max-width: 600px;
+	margin-top: 20px; /* Boşluk bırak */
+}
+
+.textInput {
+	flex-grow: 1;
+	padding-left: 10px;
+	border: none;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	background-color: #333; /* Koyu arka plan rengi */
+	color: #fff; /* Beyaz metin rengi */
+}
+
+.sendButton {
+	padding: 10px 20px;
+	background-color: #333; /* Koyu gri gönder butonu arka plan rengi */
+	color: #fff; /* Beyaz metin rengi */
+	border: none;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.2s; /* Geçiş efekti */
+}
+
+.sendButton:focus {
+	outline: none;
+}
+
+.sendButton:disabled {
+	background-color: #999; /* Engelli durumda daha koyu bir gri */
+	cursor: not-allowed;
+}
+
+.sendButton:hover {
+	background-color: #777; /* Hover durumunda daha koyu bir gri */
+}
+
+.loadingText {
+	color: #007bff; /* Yükleme metni rengi */
+}
+
+.textInput:disabled,
+.sendButton:disabled {
+	opacity: 0.5; /* Engelli durumda daha düşük opaklık */
+}

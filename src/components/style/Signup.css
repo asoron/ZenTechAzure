@@ -1,0 +1,61 @@
+.signup-container {
+	max-width: 400px;
+	margin: 100px auto;
+	padding: 50px;
+	border-radius: 8px;
+	background-color: #333; /* Dark background */
+	box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Light shadow for contrast */
+	color: #f7f7f7; /* Light text for contrast */
+}
+
+.form-group label {
+	display: block;
+	margin-bottom: 10px;
+	color: #ccc; /* Lighter text for labels */
+}
+
+.form-group input {
+	width: 100%;
+	padding: 12px;
+	border-radius: 4px;
+	margin-bottom: 20px;
+	border: 1px solid #555; /* Lighter border for inputs */
+	background-color: #222; /* Darker background for input fields */
+	color: #f7f7f7; /* Light text for input */
+}
+
+.signup-button {
+	width: 100%;
+	background-color: #007bff;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.signup-button:hover {
+	background-color: #0056b3;
+}
+
+.error-message {
+	color: #ff6b6b; /* Lighter red for errors, suitable for dark background */
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.redirect {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.redirect a {
+	color: #80bdff; /* Lighter blue for links, better for dark mode */
+	text-decoration: none;
+}
+
+.redirect a:hover {
+	text-decoration: underline;
+	color: #fff; /* White on hover for better visibility */
+}

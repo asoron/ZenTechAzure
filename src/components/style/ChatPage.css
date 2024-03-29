@@ -1,0 +1,31 @@
+/* ChatPage.css */
+.appContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.sideMenuContainer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+}
+
+.textInputContainer {
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.chatUIContainer {
+	flex-grow: 1;
+	width: 100%;
+	max-width: 800px; /* Or adjust as needed */
+	margin-top: 20px;
+}
+
+/* Add more styling as needed */

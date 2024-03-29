@@ -1,0 +1,35 @@
+/* MessageDisplay.css - Adjusted for dark mode */
+.messageDisplay {
+	width: 100%; /* Konteynır genişliğini doldurur */
+	max-width: 600px; /* Maksimum genişlik, örneğin */
+	margin: 0 auto; /* Merkezde hizalar */
+	overflow-y: auto;
+	height: calc(100vh - 150px); /* Yükseklik ayarı */
+	padding: 20px;
+}
+
+.message {
+	margin-bottom: 10px;
+	overflow: hidden; /* Prevent background color from leaking outside */
+}
+
+.messageContent {
+	padding: 8px 12px;
+	border-radius: 10px; /* Ensure this matches or is less than the container if the container has a border-radius */
+	background-color: #202020; /* Darker background for messages */
+	color: #e0e0e0; /* Lighter text for visibility */
+	margin: 2px 0;
+}
+
+.user,
+.ai {
+	background-color: transparent; /* Remove background-color if it's not needed */
+}
+
+.user .messageContent {
+	background-color: #202020; /* Distinguish user messages */
+}
+
+.ai .messageContent {
+	background-color: #333333; /* Distinguish AI responses */
+}
