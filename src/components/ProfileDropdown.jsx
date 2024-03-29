@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
-import { auth } from "../firebaseConfig";
+import { auth } from "../firebaseConfig.js";
 import "./style/ProfileDropdown.css";
 
 function ProfileDropdown() {

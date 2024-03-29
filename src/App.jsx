@@ -6,14 +6,13 @@ import {
 	Navigate,
 } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "./firebaseConfig";
-import Login from "./components/Login";
-import SideMenu from "./components/SideMenu";
-import ChatUI from "./chatPage";
+import { auth } from "./firebaseConfig.js";
+import Login from "./components/Login.jsx";
+import SideMenu from "./components/SideMenu.jsx";
+import ChatUI from "./chatPage.jsx";
 
 function App() {
 	const [currentUser, setCurrentUser] = useState(null);
-	const [loading, setLoading] = useState(true);
 	const [selectedAI, setSelectedAI] = useState("Lit");
 	const [showSideMenu, setShowSideMenu] = useState(false);
 
