@@ -7,7 +7,7 @@ export default defineConfig({
 	plugins: [react()],
 	resolve: {
 		alias: {
-			"@azure/openai": "@azure/openai", // Use the correct package name here
+			"@azure/openai": "@azure/openai",
 		},
 	},
 });
