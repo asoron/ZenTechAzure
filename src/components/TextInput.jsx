@@ -1,6 +1,9 @@
 // TextInput.jsx
-import React, { useState } from "react";
+import { useState } from "react";
+import PropTypes from 'prop-types';
 import "./style/TextInput.css"; // Import CSS file
+
+
 
 const TextInput = ({ onSendMessage, isLoading }) => {
 	const [message, setMessage] = useState("");
@@ -33,6 +36,10 @@ const TextInput = ({ onSendMessage, isLoading }) => {
 			</button>
 		</form>
 	);
+};
+TextInput.propTypes = {
+    onSendMessage: PropTypes.func.isRequired,
+    isLoading: PropTypes.bool.isRequired,
 };
 
 export default TextInput;

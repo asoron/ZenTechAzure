@@ -1,24 +1,15 @@
 // App.jsx
-import React, { useState } from "react";
+import PropTypes from 'prop-types';
 
-import SideMenu from "./components/SideMenu";
 import ChatUI from "./components/ChatUI";
 import ProfileDropdown from "./components/ProfileDropdown";
 
-function ChatPage() {
-	const [selectedAI, setSelectedAI] = useState("Lit");
-	const [aiChangeKey, setAiChangeKey] = useState(0);
-	const handleAIChange = (aiName) => {
-		setSelectedAI(aiName);
-		setAiChangeKey((prevKey) => prevKey + 1);
-	};
+function ChatPage({ selectedAI, aiChangeKey }) {
+
 
 	return (
 		<div className="appContainer">
-			<SideMenu
-				onAIChange={handleAIChange}
-				selectedAI={selectedAI}
-			/>
+			
 			<ProfileDropdown />
 			<ChatUI
 				selectedAI={selectedAI}
@@ -27,5 +18,8 @@ function ChatPage() {
 		</div>
 	);
 }
-
+ChatPage.propTypes = {
+    selectedAI: PropTypes.string.isRequired,
+    aiChangeKey: PropTypes.number.isRequired
+};
 export default ChatPage;

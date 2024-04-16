@@ -1,5 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
+import PropTypes from 'prop-types';
 import "./style/MessageDisplay.css"; // Import CSS file
+
 
 const MessageDisplay = ({ messages }) => {
 	const messagesEndRef = useRef(null);
@@ -31,6 +33,12 @@ const MessageDisplay = ({ messages }) => {
 			<div ref={messagesEndRef} />
 		</div>
 	);
+};
+MessageDisplay.propTypes = {
+    messages: PropTypes.arrayOf(PropTypes.shape({
+        role: PropTypes.string.isRequired,
+        content: PropTypes.string.isRequired,
+    })).isRequired,
 };
 
 export default MessageDisplay;

@@ -1,12 +1,14 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { OpenAIClient, AzureKeyCredential } from "@azure/openai";
 import MessageDisplay from "./MessageDisplay";
 import TextInput from "./TextInput";
+import PropTypes from 'prop-types';
 import { AIModelData } from "./assets/Napnite";
 import "./style/ChatUI.css"; // Ensure this import is correct
 
 const azureApiKey = "bcc85e30e3044e0b9fe9e1dbc4cc2c7c"; // API anahtarınızı buraya girin
 const endpoint = "https://zenchatzengpt.openai.azure.com/";
+
 
 // `selectedAI` prop'unu ChatUI komponentine ekleyin
 const ChatUI = ({ selectedAI }) => {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { auth } from "../firebaseConfig"; // Proje yapısına göre yol ayarlayın
 import { signInWithEmailAndPassword } from "firebase/auth";
 import "./style/Login.css";
