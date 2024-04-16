@@ -1,9 +1,9 @@
 // App.jsx
 import React, { useState } from "react";
 
-import SideMenu from "./components/SideMenu.jsx";
-import ChatUI from "./components/ChatUI.jsx";
-import ProfileDropdown from "./components/ProfileDropdown.jsx";
+import SideMenu from "./components/SideMenu";
+import ChatUI from "./components/ChatUI";
+import ProfileDropdown from "./components/ProfileDropdown";
 
 function ChatPage() {
 	const [selectedAI, setSelectedAI] = useState("Lit");

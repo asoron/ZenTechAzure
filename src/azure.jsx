@@ -1,33 +1,19 @@
-// ChatUI.jsx
 import React, { useState, useEffect, useRef } from "react";
 import { OpenAIClient, AzureKeyCredential } from "@azure/openai";
 import MessageDisplay from "./MessageDisplay";
 import TextInput from "./TextInput";
+import { AIModelData } from "./assets/Napnite";
 import "./style/ChatUI.css"; // Ensure this import is correct
 
 const azureApiKey = "bcc85e30e3044e0b9fe9e1dbc4cc2c7c"; // API anahtarınızı buraya girin
 const endpoint = "https://zenchatzengpt.openai.azure.com/";
 
+// `selectedAI` prop'unu ChatUI komponentine ekleyin
 const ChatUI = ({ selectedAI }) => {
 	const [messages, setMessages] = useState([]);
-	const [AIModelData, setAIModelData] = useState(null);
+	const [userInput, setUserInput] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
 	const chatBoxRef = useRef(null);
-
-	useEffect(() => {
-		const loadModelData = async () => {
-			try {
-				const modelData = await import(`./assets/${selectedAI}`);
-				setAIModelData(modelData.default);
-			} catch (error) {
-				console.error("Failed to load AI model data:", error);
-			}
-		};
-
-		if (selectedAI) {
-			loadModelData();
-		}
-	}, [selectedAI]);
 
 	useEffect(() => {
 		setMessages([]);
@@ -90,14 +76,11 @@ const ChatUI = ({ selectedAI }) => {
 			chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
 		}
 	}, [messages]);
-
 	return (
-		<div className="chatUI">
-			<div
-				className="chatContent"
-				ref={chatBoxRef}>
-				<MessageDisplay messages={messages} />
-			</div>
+		<div
+			className="chatUI"
+			ref={chatBoxRef}>
+			<MessageDisplay messages={messages} />
 			<TextInput
 				onSendMessage={handleSendMessage}
 				isLoading={isLoading}
