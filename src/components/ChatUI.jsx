@@ -20,7 +20,7 @@ const ChatUI = ({ selectedAI }) => {
 	useEffect(() => {
 		const loadModelData = async () => {
 			try {
-				const modelData = await import(`./assets/${selectedAI}`);
+				const modelData = await import(`./assets/${selectedAI}.js`);
 				setAIModelData(modelData.default);
 			} catch (error) {
 				console.error("Failed to load AI model data:", error);
