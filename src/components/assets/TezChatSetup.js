@@ -19,7 +19,7 @@ export const AIModelData = {
         }
     ],
     chatParameters: {
-        deploymentName: '32k-gpt4',
+        deploymentName: 'gpt-4-32k-0314',
         maxResponseLength: 4095,
 		temperature: 0.7,
 		topProbablities: 0.95,
