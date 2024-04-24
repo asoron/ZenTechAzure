@@ -20,14 +20,14 @@ export const AIModelData = {
     ],
     chatParameters: {
         deploymentName: '32k-gpt4',
-        maxResponseLength: 17422,
-        temperature: 0.7,
-        topProbablities: 0.95,
-        stopSequences: null,
-        pastMessagesToInclude: 20,
-        frequencyPenalty: 0,
-        presencePenalty: 0
-    }
+        maxResponseLength: 4095,
+		temperature: 0.7,
+		topProbablities: 0.95,
+		stopSequences: null,
+		pastMessagesToInclude: 20,
+		frequencyPenalty: 0,
+		presencePenalty: 0,
+	},
 };
 
 export default AIModelData;
