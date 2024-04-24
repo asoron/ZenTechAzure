@@ -6,6 +6,7 @@ const useUserPermissions = (userId) => {
 	const [permissions, setPermissions] = useState({
 		Napnite: false,
 		Lit: false,
+		TezChatSetup: false,
 	});
 	const [isLoading, setIsLoading] = useState(true);
 
@@ -24,7 +25,7 @@ const useUserPermissions = (userId) => {
 					setPermissions(docSnap.data());
 				} else {
 					console.log("No such document!");
-					setPermissions({ Napnite: false, Lit: false }); // Reset or set default permissions
+					setPermissions({ Napnite: false, Lit: false ,TezChatSetup:false}); // Reset or set default permissions
 				}
 			} catch (error) {
 				console.error("Error fetching permissions:", error);
