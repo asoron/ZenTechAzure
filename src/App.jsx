@@ -14,7 +14,7 @@ import ChatUI from "./chatPage";
 function App() {
     const [currentUser, setCurrentUser] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [selectedAI, setSelectedAI] = useState("Napnite");
+    const [selectedAI, setSelectedAI] = useState("Normal");
 	const [aiChangeKey, setAiChangeKey] = useState(0);
     const [showSideMenu, setShowSideMenu] = useState(false);
 	

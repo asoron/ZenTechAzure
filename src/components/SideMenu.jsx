@@ -10,6 +10,15 @@ const SideMenu = ({ onAIChange, selectedAI, userId }) => {
 	const buttons = [
 		{ name: "Napnite", roles: ["admin", "user"], visible: permissions.Napnite },
 		{ name: "Lit", roles: ["editor", "user"], visible: permissions.Lit },
+		{ name: "Accounter", roles: ["editor", "user"], visible: permissions.TezChatSetup },
+		{ name: "Influencer", roles: ["editor", "user"], visible: permissions.TezChatSetup },
+		{ name: "MarketingManager", roles: ["editor", "user"], visible: permissions.TezChatSetup },
+		{ name: "PT", roles: ["editor", "user"], visible: permissions.TezChatSetup },
+		{ name: "SLP", roles: ["editor", "user"], visible: permissions.TezChatSetup },
+		{ name: "SocialManager", roles: ["editor", "user"], visible: permissions.TezChatSetup },
+		{ name: "StartupLawyer", roles: ["editor", "user"], visible: permissions.TezChatSetup },
+		{ name: "TechWriter", roles: ["editor", "user"], visible: permissions.TezChatSetup },
+		{ name: "TezChatSetup", roles: ["editor", "user"], visible: permissions.TezChatSetup },
 		// Add more buttons as needed
 	];
 
