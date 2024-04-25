@@ -7,6 +7,7 @@ const useUserPermissions = (userId) => {
 		Napnite: false,
 		Lit: false,
 		TezChatSetup: false,
+<<<<<<< HEAD
 		Accounter: false,
 		Influencer: false,
 		MarketingManager: false,
@@ -15,6 +16,8 @@ const useUserPermissions = (userId) => {
 		SocialManager: false,
 		StartupLawyer: false,
 		TechWriter: false,
+=======
+>>>>>>> ab95d567deed5becd32c4e5836f8e5fd238e352b
 	});
 	const [isLoading, setIsLoading] = useState(true);
 

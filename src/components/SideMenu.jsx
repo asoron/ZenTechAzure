@@ -10,6 +10,7 @@ const SideMenu = ({ onAIChange, selectedAI, userId }) => {
 	const buttons = [
 		{ name: "Napnite", roles: ["admin", "user"], visible: permissions.Napnite },
 		{ name: "Lit", roles: ["editor", "user"], visible: permissions.Lit },
+<<<<<<< HEAD
 		{ name: "Accounter", roles: ["editor", "user"], visible: permissions.TezChatSetup },
 		{ name: "Influencer", roles: ["editor", "user"], visible: permissions.TezChatSetup },
 		{ name: "MarketingManager", roles: ["editor", "user"], visible: permissions.TezChatSetup },
@@ -18,6 +19,8 @@ const SideMenu = ({ onAIChange, selectedAI, userId }) => {
 		{ name: "SocialManager", roles: ["editor", "user"], visible: permissions.TezChatSetup },
 		{ name: "StartupLawyer", roles: ["editor", "user"], visible: permissions.TezChatSetup },
 		{ name: "TechWriter", roles: ["editor", "user"], visible: permissions.TezChatSetup },
+=======
+>>>>>>> ab95d567deed5becd32c4e5836f8e5fd238e352b
 		{ name: "TezChatSetup", roles: ["editor", "user"], visible: permissions.TezChatSetup },
 		// Add more buttons as needed
 	];
