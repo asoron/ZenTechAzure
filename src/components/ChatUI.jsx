@@ -67,6 +67,7 @@ const ChatUI = ({ selectedAI }) => {
 					topP: AIModelData.chatParameters.topProbabilities,
 					frequencyPenalty: AIModelData.chatParameters.frequencyPenalty,
 					presencePenalty: AIModelData.chatParameters.presencePenalty,
+					pastMessagesToInclude: AIModelData.chatParameters.pastMessagesToInclude,
 				}
 			);
 			if (response.choices && response.choices.length > 0) {
